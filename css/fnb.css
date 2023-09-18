@@ -1,0 +1,30 @@
+section#fnb {
+  
+  border-top: 1px solid lightgray;
+}
+section#fnb div.wrap {
+  
+}
+section#fnb div.wrap ul {
+  
+  display: flex;
+  justify-content: space-between;
+}
+section#fnb div.wrap ul li {
+  
+}
+section#fnb div.wrap ul li a {
+  
+  font-size: 14px;
+  color: gray;
+  border-bottom: 1px solid transparent;
+  font-weight: 500;
+}
+section#fnb div.wrap ul li:nth-child(8) a {
+  color: black;
+  border-bottom: 1px solid;
+  font-weight: 700;
+}
+section#fnb div.wrap ul li a:hover {
+  border-bottom: 1px solid;
+}

@@ -1,0 +1,79 @@
+section#title {
+  
+  height: 500px;
+  background-color: black;
+}
+section#title div.wrap {
+  
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+section#title div.wrap div.admovieinfo {
+  
+  line-height: 1.5;
+}
+section#title div.wrap div.admovieinfo h2 {
+  
+  font-size: 40px;
+  font-weight: 700;
+}
+section#title div.wrap div.admovieinfo p {
+  
+  font-size: 20px;
+}
+section#title div.wrap div.atag {
+  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+section#title div.wrap div.atag a.more {
+  background-color: white;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+  padding: 0px 15px;
+  box-sizing: border-box;
+}
+section#title div.wrap div.atag a.more::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/sright.svg);
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+}
+section#title div.wrap div.atag a:not(.more){
+  background-size: cover;
+  background-position: center;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+section#title div.wrap div.atag a.play {
+  background-image: url(../img/wplay.svg);
+}
+section#title div.wrap div.atag a.pause {
+  background-image: url(../img/wpause.svg);
+}
+section#title div.wrap div.atag a.volumeup {
+  background-image: url(../img/volumeup.svg);
+}
+section#title div.wrap div.atag a.volumeoff {
+  background-image: url(../img/volumeoff.svg);
+}

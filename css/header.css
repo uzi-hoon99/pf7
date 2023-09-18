@@ -1,0 +1,122 @@
+header {
+  
+}
+header div.gnbtop {
+  
+}
+header div.gnbtop div.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+header div.gnbtop div.wrap h1 {
+  display: flex;
+  align-items: end;
+  letter-spacing: 5px;
+}
+header div.gnbtop div.wrap h1 span {
+  display: flex;
+}
+header div.gnbtop div.wrap h1 span a {
+  background-image: url(../img/logo.png);
+  width: 117px;
+  height: 53px;
+  display: inline-block;
+  background-size: contain;
+  font-size: 0;
+}
+header div.gnbtop div.wrap ul {
+  display: flex;
+}
+header div.gnbtop div.wrap ul li {
+  
+}
+header div.gnbtop div.wrap ul li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+header div.gnbtop div.wrap ul li a::before{
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+}
+header div.gnbtop div.wrap ul li:nth-child(1) a::before{
+  background-image: url(../img/login.png);
+}
+header div.gnbtop div.wrap ul li:nth-child(2) a::before{
+  background-image: url(../img/signup.png);
+}
+header div.gnbtop div.wrap ul li:nth-child(3) a::before{
+  background-image: url(../img/user.png);
+}
+header div.gnbtop div.wrap ul li:nth-child(4) a::before{
+  background-image: url(../img/customer.png);
+}
+header div.gnbbtm {
+  border-top: 1px solid lightgray;
+  border-bottom: 2px solid red;
+}
+header div.gnbbtm div.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+header div.gnbbtm div.wrap ul {
+  display: flex;
+}
+header div.gnbbtm div.wrap ul li {
+  
+}
+header div.gnbbtm div.wrap ul li a {
+  padding: 15px 30px;
+  display: block;
+  font-weight: 500;
+}
+header div.gnbbtm div.wrap ul li:nth-child(3) a {
+  color: red;
+}
+header div.gnbbtm div.wrap ul li:nth-child(1) a {
+  padding-left: 0px;
+}
+header div.gnbbtm div.wrap ul li:nth-child(6) a {
+  padding-right: 0px;
+}
+header div.gnbbtm div.wrap form {
+  display: flex;
+  align-items: center;
+}
+header div.gnbbtm div.wrap form::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  border-right: 1px solid lightgray; 
+  height: 15px;
+  margin-right: 10px;
+}
+header div.gnbbtm div.wrap form::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  border-right: 1px solid lightgray; 
+  height: 15px;
+  margin-left: 10px;
+}
+header div.gnbbtm div.wrap form input {
+  border: none;
+  background-color: transparent;
+}
+header div.gnbbtm div.wrap form button.search {
+  border: none;
+  background-color: transparent;
+  font-size: 0;
+  background-image: url(../img/search.png);
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  cursor: pointer;
+}

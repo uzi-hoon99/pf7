@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(UZI)CGV</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/wgnb.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/movierank.css">
+    <link rel="stylesheet" href="css/event.css">
+    <link rel="stylesheet" href="css/special.css">
+    <link rel="stylesheet" href="css/giftitem.css">
+    <link rel="stylesheet" href="css/noticearea.css">
+    <link rel="stylesheet" href="css/fnb.css">
+    <link rel="stylesheet" href="css/company.css">
+    <link rel="stylesheet" href="css/aside.css">
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("header div.gnbbtm div.wrap ul li").mouseenter(function(){
+                $("div.wgnb").slideDown();
+            });
+            $("header div.gnbtop").mouseenter(function(){
+                $("div.wgnb").slideUp();
+                }
+            );
+            $("#title").mouseenter(function(){
+                $("div.wgnb").slideUp();
+            });
+
+            $("#title div.wrap div.atag a.play").click(function(){
+                $("#title div.wrap div.atag a.play").addClass("hide");
+                $("#title div.wrap div.atag a.pause").removeClass("hide");
+                return false;
+            });
+            $("#title div.wrap div.atag a.pause").click(function(){
+                $("#title div.wrap div.atag a.pause").addClass("hide");
+                $("#title div.wrap div.atag a.play").removeClass("hide");
+                return false;
+            });
+
+            $("#title div.wrap div.atag a.volumeup").click(function(){
+                $("#title div.wrap div.atag a.volumeup").addClass("hide");
+                $("#title div.wrap div.atag a.volumeoff").removeClass("hide");
+                return false;
+            });
+
+            $("#title div.wrap div.atag a.volumeoff").click(function(){
+                $("#title div.wrap div.atag a.volumeoff").addClass("hide");
+                $("#title div.wrap div.atag a.volumeup").removeClass("hide");
+                return false;
+            });
+
+            $(".moviechart").click(function(){
+                $(".reser").hide();
+                $(".chart").show();
+                $(".moviechart a").addClass("select");
+                $(".moviereser a").removeClass("select");
+                return false;
+            });
+
+            $(".reser").hide();
+            $(".moviereser").click(function(){
+                return false;
+            });
+            $(".moviereser").click(function(){
+                $(".chart").hide();
+                $(".reser").show();
+                $(".moviereser a").addClass("select");
+                $(".moviechart a").removeClass("select");
+                $('.reserlist').slick({
+                    infinite: false,
+                    slidesToShow: 5,
+                    slidesToScroll: 5
+                });
+            });
+
+            $("#event div.wrap div.eventmenu div.eventbutton a.play").click(function(){
+                $("#event div.wrap div.eventmenu div.eventbutton a.play").addClass("hide");
+                $("#event div.wrap div.eventmenu div.eventbutton a.pause").removeClass("hide");
+                return false;
+            });
+            $("#event div.wrap div.eventmenu div.eventbutton a.pause").click(function(){
+                $("#event div.wrap div.eventmenu div.eventbutton a.pause").addClass("hide");
+                $("#event div.wrap div.eventmenu div.eventbutton a.play").removeClass("hide");
+                return false;
+            });
+
+            $("section#special div.wrap div.specialitem ul li").mouseenter(function(){
+                $(this).addClass("specialselect");
+                $(this).siblings().removeClass("specialselect");
+            });
+            $("section#special div.wrap div.specialitem ul li:nth-child(1)").mouseenter(function(){
+                $(".special1").removeClass("hide");
+                $(".special1").siblings("a").addClass("hide");
+            });
+            $("section#special div.wrap div.specialitem ul li:nth-child(2)").mouseenter(function(){
+                $(".special2").removeClass("hide");
+                $(".special2").siblings("a").addClass("hide");
+            });
+            $("section#special div.wrap div.specialitem ul li:nth-child(3)").mouseenter(function(){
+                $(".special3").removeClass("hide");
+                $(".special3").siblings("a").addClass("hide");
+            });
+            $("section#special div.wrap div.specialitem ul li:nth-child(4)").mouseenter(function(){
+                $(".special4").removeClass("hide");
+                $(".special4").siblings("a").addClass("hide");
+            });
+
+            $("section#noticearea div.wrap div.swiperbanner a.swiperplay").click(function(){
+                $("section#noticearea div.wrap div.swiperbanner a.swiperplay").addClass("hide");
+                $("section#noticearea div.wrap div.swiperbanner a.swiperpause").removeClass("hide");
+                return false;
+            });
+            $("section#noticearea div.wrap div.swiperbanner a.swiperpause").click(function(){
+                $("section#noticearea div.wrap div.swiperbanner a.swiperpause").addClass("hide");
+                $("section#noticearea div.wrap div.swiperbanner a.swiperplay").removeClass("hide");
+                return false;
+            });
+
+            $("aside a.top").click(function(){
+                $("html,body").animate({scrollTop:0},750);
+            });
+        });
+    </script>
+    <!-- 슬릭 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.chartlist').slick({
+                infinite: false,
+                slidesToShow: 5,
+                slidesToScroll: 5
+            });
+            $('.eventlist').slick({
+                infinite: false,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="gnbtop">
+            <div class="wrap">
+                <h1><span><a href="">CGV</a></span>CULTUREPLEX</h1>
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">MY CGV</a></li>
+                    <li><a href="">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="gnbbtm">
+            <div class="wrap">
+                <ul>
+                    <li><a href="">영화</a></li>
+                    <li><a href="">극장</a></li>
+                    <li><a href="">예매</a></li>
+                    <li><a href="">스토어</a></li>
+                    <li><a href="">이벤트</a></li>
+                    <li><a href="">혜택</a></li>
+                </ul>
+                <form action="">
+                    <input type="text">
+                    <button class="search">검색</button>
+                </form>
+            </div>
+        </div>
+        <div class="wgnb">
+            <div class="wrap">
+                <div class="wsup">
+                    <h2><a href="">영화</a></h2>
+                    <ul>
+                        <li><a href="">무비차트</a></li>
+                        <li><a href="">아트하우스</a></li>
+                        <li><a href="">ICECON</a></li>
+                    </ul>
+                </div>
+                <div class="wsup">
+                    <h2><a href="">극장</a></h2>
+                    <ul>
+                        <li><a href="">CGV 극장</a></li>
+                        <li><a href="">특별관</a></li>
+                    </ul>
+                </div>
+                <div class="wsup">
+                    <h2><a href="">예매</a></h2>
+                    <ul>
+                        <li><a href="">빠른예매</a></li>
+                        <li><a href="">상영스케줄</a></li>
+                        <li><a href="">English Ticketing</a></li>
+                        <li><a href="">English Schedule</a></li>
+                    </ul>
+                </div>
+                <div class="wsup">
+                    <h2><a href="">스토어</a></h2>
+                    <ul>
+                        <li><a href="">패키지</a></li>
+                        <li><a href="">영화관람권</a></li>
+                        <li><a href="">기프트카드</a></li>
+                        <li><a href="">콤보</a></li>
+                        <li><a href="">팝콘</a></li>
+                        <li><a href="">음료</a></li>
+                        <li><a href="">스낵</a></li>
+                        <li><a href="">플레이존</a></li>
+                        <li><a href="">씨네샵</a></li>
+                    </ul>
+                </div>
+                <div class="wsup">
+                    <h2><a href="">이벤트</a></h2>
+                    <ul>
+                        <li><a href="">SPECIAL</a></li>
+                        <li><a href="">영화/예매</a></li>
+                        <li><a href="">멤버십/CLUB</a></li>
+                        <li><a href="">CGV 극장별</a></li>
+                        <li><a href="">제휴할인</a></li>
+                        <li><a href="">당첨자 발표</a></li>
+                        <li><a href="">종료된 이벤트</a></li>
+                    </ul>
+                </div>
+                <div class="wsup">
+                    <h2><a href="">혜택</a></h2>
+                    <ul>
+                        <li><a href="">CGV 할인정보</a></li>
+                        <li><a href="">CLUB 서비스</a></li>
+                        <li><a href="">VIP 라운지</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="title">
+            <div class="wrap">
+                <div class="admovieinfo">
+                    <h2>콘크리트 유토피아</h2>
+                <p>극장가를 압도할 강렬한 기대작<br>8월 9일, 큰 거 온다!</p>
+                </div>
+                <div class="atag">
+                    <a href="" class="more">상세보기</a>
+                    <a href="" class="play">영상재생</a>
+                    <a href="" class="pause hide">영상정지</a>
+                    <a href="" class="volumeup">사운드재생</a>
+                    <a href="" class="volumeoff hide">사운드정지</a>
+                </div>
+            </div>
+        </section>
+        <section id="movierank">
+            <div class="wrap padding50">
+                <div class="moviemenu">
+                    <hgroup>
+                        <h2 class="moviechart"><a href="#" class="select">무비차트</a></h2>
+                        <h2 class="moviereser"><a href="#">상영예정작</a></h2>
+                    </hgroup>
+                    <a href="" class="viewall">전체보기</a>
+                </div>
+                <div class="chart">
+                    <ul class="chartlist">
+                        <li>
+                            <img src="img/poster/movie1.jpg" alt="더 문">
+                            <h3>더 문</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie2.jpg" alt="오펜하이머">
+                            <h3>오펜하이머</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie3.jpg" alt="밀수">
+                            <h3>밀수</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie4.jpg" alt="비공식작전">
+                            <h3>비공식작전</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie5.jpg" alt="콘크리트 유토피아">
+                            <h3>콘크리트 유토피아</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie6.jpg" alt="엘리멘탈">
+                            <h3>엘리멘탈</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie7.jpg" alt="더 퍼스트 슬램덩크">
+                            <h3>더 퍼스트 슬램덩크</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie8.jpg" alt="미션 임파서블-데드 레코닝">
+                            <h3>미션 임파서블-데드 레코닝</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie9.jpg" alt="2023 ZEROBASEONE FAN-CON">
+                            <h3>2023 ZEROBASEONE FAN-CON</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie10.jpg" alt="몬스터 패밀리 2">
+                            <h3>몬스터 패밀리 2</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie11.jpg" alt="바비">
+                            <h3>바비</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie12.jpg" alt="핑크퐁 시네마 콘서트3-진저브레드맨을 잡아라">
+                            <h3>핑크퐁 시네마 콘서트3-진저브레드맨을 잡아라</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie13.jpg" alt="10CM City Live with CGV">
+                            <h3>10CM City Live with CGV</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie14.jpg" alt="명탐정코난-흑철의 어영">
+                            <h3>명탐정코난-흑철의 어영</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie15.jpg" alt="여름날 우리">
+                            <h3>여름날 우리</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie16.jpg" alt="더 문(무비팬딜)">
+                            <h3>더 문(무비팬딜)</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie17.jpg" alt="비닐하우스">
+                            <h3>비닐하우스</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie18.jpg" alt="극장판 슈퍼윙스-맥시멈 스피드">
+                            <h3>극장판 슈퍼윙스-맥시멈 스피드</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie19.jpg" alt="강다니엘: 마이 퍼레이드">
+                            <h3>강다니엘: 마이 퍼레이드</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/movie20.jpg" alt="인시디어스-빨간 문">
+                            <h3>인시디어스-빨간 문</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reser">
+                    <ul class="reserlist">
+                        <li>
+                            <img src="img/poster/reser1.jpg" alt="[씨네뮤지엄 Season2.] 루브르 박물관">
+                            <h3>[씨네뮤지엄 Season2.] 루브르 박물관</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser2.jpg" alt="콘크리트 유토피아">
+                            <h3>콘크리트 유토피아</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser3.jpg" alt="마에스트로">
+                            <h3>마에스트로</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser4.jpg" alt="이름 없는 춤">
+                            <h3>이름 없는 춤</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser5.jpg" alt="퀴어 마이 프렌즈">
+                            <h3>퀴어 마이 프렌즈</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser6.jpg" alt="런닝맨-리벤져스">
+                            <h3>런닝맨-리벤져스</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser7.jpg" alt="연악-나의 운명">
+                            <h3>연악-나의 운명</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser8.jpg" alt="[씨네뮤지엄 Season2.] 오르세 미술관">
+                            <h3>[씨네뮤지엄 Season2.] 오르세 미술관</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser9.jpg" alt="[아트&다이닝]내셔널갤러리, 예술의 흐름을 담다">
+                            <h3>[아트&다이닝]내셔널갤러리, 예술의 흐름을 담다</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser10.jpg" alt="오펜하이머">
+                            <h3>오펜하이머</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser11.jpg" alt="2023 ZEROBASEONE FAN-CON">
+                            <h3>2023 ZEROBASEONE FAN-CON</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser12.jpg" alt="보호자">
+                            <h3>보호자</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reserreser13.jpg" alt="달짝지근해-7510">
+                            <h3>달짝지근해-7510</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser14.jpg" alt="메가로돈 2">
+                            <h3>메가로돈 2</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser15.jpg" alt="너의 순간">
+                            <h3>너의 순간</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser16.jpg" alt="지옥만세">
+                            <h3>지옥만세</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser17.jpg" alt="쿠렌치스 인 아테네">
+                            <h3>쿠렌치스 인 아테네</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser18.jpg" alt="[씨네뮤지엄 Season2.] 바티칸 박물관">
+                            <h3>[씨네뮤지엄 Season2.] 바티칸 박물관</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser19.jpg" alt="[한밤의 미술관] 비엔나 편">
+                            <h3>[한밤의 미술관] 비엔나 편</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="img/poster/reser20.jpg" alt="METALLICA: M72 WORLD TOUR 2 NIGHTS 2 DIFFERENT SETS - NIGHT 1">
+                            <h3>METALLICA: M72 WORLD TOUR 2 NIGHTS 2 DIFFERENT SETS - NIGHT 1</h3>
+                            <div class="movieatag">
+                                <a href="" class="viewmore">상세보기</a>
+                                <a href="" class="ticketing">예매하기</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="event">
+            <div class="wrap padding50">
+                <div class="eventmenu">
+                    <h2>EVENT</h2>
+                    <div class="eventbutton">
+                        <a href="" class="play">재생</a>
+                        <a href="" class="pause hide">정지</a>
+                        <a href="" class="viewall">전체보기</a></div>
+                </div>
+                <div class="eventitem">
+                    <ul class="eventlist">
+                        <li>
+                            <a href="">
+                                <div class="eventimgsize">
+                                    <img src="img/event/event1.jpg" alt="[핑크퐁 시네마 콘서트3]핑크퐁의 무릎 해방 일지">
+                                </div>
+                                <h3>[핑크퐁 시네마 콘서트3]핑크퐁의 무릎 해방 일지</h3>
+                                <p>2023.07.21~2023.08.15</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="eventimgsize">
+                                    <img src="img/event/event2.jpg" alt="[한국 영화 BIG3] IMAX 릴레이 특가">
+                                </div>
+                                <h3>[한국 영화 BIG3] IMAX 릴레이 특가</h3>
+                                <p>2023.07.12~2023.08.14</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="eventimgsize">
+                                    <img src="img/event/event3.jpg" alt="[더 문]필름마크">
+                                </div>
+                                <h3>[더 문]필름마크</h3>
+                                <p>2023.07.28~2023.08.10</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="eventimgsize">
+                                    <img src="img/event/event4.jpg" alt="[비공식작전]필름마크">
+                                </div>
+                                <h3>[비공식작전]필름마크</h3>
+                                <p>2023.07.28~2023.08.10</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="eventimgsize">
+                                    <img src="img/event/event5.jpg" alt="[극장판 슈퍼윙스] 앵콜여름방학 스페셜 상영회">
+                                </div>
+                                <h3>[극장판 슈퍼윙스] 앵콜여름방학 스페셜 상영회</h3>
+                                <p>2023.08.02~2023.08.05</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="eventimgsize">
+                                    <img src="img/event/event6.jpg" alt="MOINTS 커뮤니티신규 론칭 이벤트!">
+                                </div>
+                                <h3>MOINTS 커뮤니티신규 론칭 이벤트!</h3>
+                                <p>2023.07.18~2023.08.22</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="special">
+            <div class="wrap padding50">
+                <div class="specialtop">
+                    <h2>특별관</h2>
+                    <a href="" class="viewall">전체보기</a>
+                </div>
+                <div class="specialitem">
+                    <a href="" class="special1"><img src="img/special/special1.png" alt="SUITE CINEMA"></a>
+                    <a href="" class="special2 hide"><img src="img/special/special2.png" alt="CINE & LIVINGROOM"></a>
+                    <a href="" class="special3 hide"><img src="img/special/special3.png" alt="4DX"></a>
+                    <a href="" class="special4 hide"><img src="img/special/special4.png" alt="CINE de CHEF"></a>
+                    <ul>
+                        <li class="specialselect">
+                            <a href="">
+                                <h3>SUITE CINEMA</h3>
+                                <p>#호텔 컨셉의 프리미엄관</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3>CINE & LIVINGROOM</h3>
+                                <p>#신개념 소셜 상영관</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3>4DX</h3>
+                                <p>#모션시트 #오감체험</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3>CINE de CHEF</h3>
+                                <p>#쉐프가 있는 영화관</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="giftcon">
+            <div class="wrap padding50">
+                <ul>
+                    <li>
+                        <div class="gifttop">
+                            <h2>패키지</h2>
+                            <a href="" class="viewmore">더보기</a>
+                        </div>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift1.jpg" alt="(런닝맨: 리벤져스) 얼리버드 전용 관람권">
+                            <div class="giftinfo">
+                                <h3>(런닝맨: 리벤져스) 얼리버드 전용 관람권</h3>
+                                <p>16,000원</p>
+                            </div>
+                        </a>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift2.jpg" alt="(핑크퐁 시네마 콘서트3) 패키지 관람권(성인+아동)">
+                            <div class="giftinfo">
+                                <h3>(핑크퐁 시네마 콘서트3) 패키지 관람권(성인+아동)</h3>
+                                <p>14,000원</p>
+                            </div>
+                        </a>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift3.jpg" alt="우리 패키지">
+                            <div class="giftinfo">
+                                <h3>우리 패키지</h3>
+                                <p>61,000원</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="gifttop">
+                            <h2>영화관람권</h2>
+                            <a href="" class="viewmore">더보기</a>
+                        </div>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift4.jpg" alt="CGV 골드클래스">
+                            <div class="giftinfo">
+                                <h3>CGV 골드클래스</h3>
+                                <p>40,000원</p>
+                            </div>
+                        </a>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift5.jpg" alt="CGV 영화관람권">
+                            <div class="giftinfo">
+                                <h3>CGV 영화관람권</h3>
+                                <p>13,000원</p>
+                            </div>
+                        </a>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift6.jpg" alt="4DX관람권">
+                            <div class="giftinfo">
+                                <h3>4DX관람권</h3>
+                                <p>19,000원</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="gifttop">
+                            <h2>기프트카드</h2>
+                            <a href="" class="viewmore">더보기</a>
+                        </div>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift7.jpg" alt="파코니야 여름을부탁해">
+                            <div class="giftinfo">
+                                <h3>파코니야 여름을부탁해</h3>
+                                <p>금액충전형</p>
+                            </div>
+                        </a>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift8.jpg" alt="파코니의 썸머파티">
+                            <div class="giftinfo">
+                                <h3>파코니의 썸머파티</h3>
+                                <p>금액충전형</p>
+                            </div>
+                        </a>
+                        <a href="" class="giftitem">
+                            <img src="img/gift/gift9.jpg" alt="PACONNIE A형">
+                            <div class="giftinfo">
+                                <h3>PACONNIE A형</h3>
+                                <p>금액충전형</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="noticearea">
+            <div class="wrap padding50">
+                <h2 class="hide">공지사항</h2>
+                <div class="noticecontainer">
+                    <div class="notice">
+                        <ul>
+                            <li>
+                                <h3>공지사항</h3>
+                                <a href="" class="noticeinfo">[기타]개인정보처리방침 및 위치기반서비스 이용약관 개정 안내 (8/1 字 시행)</a>
+                                <a href="" class="viewmore">더보기</a>
+                            </li>
+                            <li>
+                                <h3>고객센터</h3>
+                                <p>1544-1122</p>
+                                <p>고객센터 운영시간 (평일 09:00~18:00)<br>외 자동응답 안내 가능합니다.</p>
+                            </li>
+                            <li>
+                                <a href="" class="hashtag">FAQ</a>
+                                <a href="" class="hashtag">1:1 문의</a>
+                                <a href="" class="hashtag">대관/단체 문의</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="app">
+                        <h3>앱 다운로드</h3>
+                        <p>CGV앱에서 더 편리하게 이용하세요</p>
+                        <img src="img/notice/qrcode.gif" alt="qrcode">
+                        <p>QR코드를 스캔하고<br>앱설치 페이지로 바로 이동하세요</p>
+                    </div>
+                </div>
+                <div class="swiperbanner">
+                    <a href="" class="banner"><img src="img/notice/swiper1.png" alt="banner1"></a>
+                    <a href="" class="banner"><img src="img/notice/swiper2.jpg" alt="banner2"></a>
+                    <a href="" class="swiperplay hide">재생</a>
+                    <a href="" class="swiperpause">정지</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="fnb">
+            <div class="wrap padding25">
+                <ul>
+                    <li><a href="">회사소개</a></li>
+                    <li><a href="">지속가능경영</a></li>
+                    <li><a href="">IR</a></li>
+                    <li><a href="">채용정보</a></li>
+                    <li><a href="">광고/제휴/출정문의</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">편성기준</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">법적고지</a></li>
+                    <li><a href="">이메일주소무단수집거부</a></li>
+                    <li><a href="">윤리경영</a></li>
+                    <li><a href="">사이버감사실</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="company">
+            <div class="wrap padding25">
+                <div class="companyinfo">
+                    <address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address>
+                    <p>
+                        <span>대표이사 : 허민회</span>
+                        <span>사업자등록번호 : 104-81-45690</span>
+                        <span>통신판매업신고번호 : 2017-서울용산-0662</span>
+                        <a href="">사업자정보확인</a>
+                    </p>
+                    <p>
+                        <span>호스팅사업자 : CJ올리브네트윅스</span>
+                        <span>개인정보보호 책임자 : 도형구</span>
+                        <span>대표이메일 : cjcgvmaster@cj.net</span>
+                    </p>
+                    <p>© CJ CGV. All Rights Reserved</p>
+                </div>
+                <div class="familysitewrap">
+                    <select name="family" id="familysite">
+                        <option class="familysitetitle" value="">계열사 바로가기</option>
+                        <optgroup label="CJ그룹">
+                            <option value="">CJ주식회사</option>
+                        </optgroup>
+                        <optgroup label="식품 & 식품서비스">
+                            <option value="">CJ제일제당</option>
+                            <option value="">CJ푸드빌</option>
+                            <option value="">CJ프레시웨이</option>
+                        </optgroup>
+                        <optgroup label="생명공학">
+                            <option value="">CJ제일제당 BIO사업부문</option>
+                            <option value="">CJ Feed&Card</option>
+                        </optgroup>
+                        <optgroup label="물류 & 신유통">
+                            <option value="">CJ대한통운</option>
+                            <option value="">CJ대한통운 건설부문</option>
+                            <option value="">CJ올리브영</option>
+                            <option value="">CJ올리브네트윅스</option>
+                            <option value="">CJ ENM 커머스부문</option>
+                        </optgroup>
+                        <optgroup label="엔터테이먼트 & 미디어">
+                            <option value="">CJ ENM 엔터테인먼트부문</option>
+                            <option value="">CJ CGV</option>
+                        </optgroup>
+                    </select>
+                    <a href="" class="gofamilysite">GO</a>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.</p>
+        </section>
+    </footer>
+    <aside>
+        <a href="#" class="top">top</a>
+    </aside>
+</body>
+</html>

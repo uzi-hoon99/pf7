@@ -1,0 +1,46 @@
+header div.wgnb {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  z-index: 2;
+  display: none;
+}
+header div.wgnb div.wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+header div.wgnb div.wrap div.wsup {
+  width: calc(100% / 6);
+  line-height: 2;
+}
+header div.wgnb div.wrap div.wsup:not(:nth-child(1)) {
+  border-left: 1px solid lightgray;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+header div.wgnb div.wrap div.wsup h2 {
+  
+}
+header div.wgnb div.wrap div.wsup h2 a {
+  border-bottom: 1px solid transparent;
+}
+header div.wgnb div.wrap div.wsup h2 a:hover {
+  border-bottom: 1px solid black;
+}
+header div.wgnb div.wrap div.wsup ul {
+  
+  display: flex;
+  flex-direction: column;
+}
+header div.wgnb div.wrap div.wsup ul li {
+  
+}
+header div.wgnb div.wrap div.wsup ul li a {
+  
+  color: gray;
+  border-bottom: 1px solid transparent;
+}
+header div.wgnb div.wrap div.wsup ul li a:hover {
+  border-bottom: 1px solid gray;
+}

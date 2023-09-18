@@ -1,0 +1,236 @@
+section#movierank {
+  
+  background-color: #eee;
+}
+section#movierank div.wrap {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+section#movierank div.wrap div.moviemenu {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section#movierank div.wrap div.moviemenu hgroup {
+  
+  display: flex;
+  font-size: 25px;
+  font-weight: 700;
+}
+section#movierank div.wrap div.moviemenu hgroup h2 {
+  
+}
+section#movierank div.wrap div.moviemenu hgroup h2 a {
+  
+  padding: 15px;
+  display: block;
+}
+section#movierank div.wrap div.moviemenu hgroup h2 a {
+  color: gray;
+}
+section#movierank div.wrap div.moviemenu hgroup h2.moviechart::after {
+  content: "";
+  height: 15px;
+  display: block;
+  border-right: 1px solid gray;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+section#movierank div.wrap div.moviemenu hgroup h2.moviechart {
+  
+  position: relative;
+}
+section#movierank div.wrap div.moviemenu hgroup h2.moviechart a {
+  
+  padding-left: 0;
+}
+section#movierank div.wrap div.moviemenu hgroup h2.moviereser {
+  
+}
+section#movierank div.wrap div.moviemenu hgroup h2.moviereser a {
+  
+  padding-right: 0;
+}
+section#movierank div.wrap div.moviemenu a.viewall {
+  
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 45px;
+}
+section#movierank div.wrap div:not(div.moviemenu) {
+  
+}
+section#movierank div.wrap div:not(div.moviemenu) ul {
+  display: flex;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul  li {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+  gap: 10px;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul li img {
+  
+  width: 170px;
+  height: 234px;
+  border-radius: 15px;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul li h3 {
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul li div.movieatag {
+  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul li div.movieatag a {
+  padding: 10px;
+  border-radius: 50px;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul li div.movieatag a.viewmore {
+  
+  background-color: white;
+}
+section#movierank div.wrap div:not(div.moviemenu) ul li div.movieatag a.ticketing {
+  
+  background-color: #dd4650;
+  color: white;
+}
+section#movierank div.wrap div.chart {
+  
+}
+section#movierank div.wrap div.chart ul {
+  
+}
+section#movierank div.wrap div.chart ul.chartlist .slick-prev {
+  background-color: rgba(255,255,255,0.75);
+  width: 50px;
+  height: 50px;
+  left: -15px;
+  z-index: 2;
+  border-radius: 100%;
+  background-image: url(../img/prev.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-size: 50%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ;
+}
+section#movierank div.wrap div.chart ul.chartlist .slick-prev::before {
+  display: none;
+}
+section#movierank div.wrap div.chart ul.chartlist .slick-next {
+  background-color: rgba(255,255,255,0.75);
+  width: 50px;
+  height: 50px;
+  right: -15px;
+  z-index: 2;
+  border-radius: 100%;
+  background-image: url(../img/next.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-size: 50%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ;
+}
+section#movierank div.wrap div.chart ul.chartlist .slick-next::before {
+  display: none;
+}
+section#movierank div.wrap div.reser ul.reserlist .slick-prev {
+  background-color: rgba(255,255,255,0.75);
+  width: 50px;
+  height: 50px;
+  left: -15px;
+  z-index: 2;
+  border-radius: 100%;
+  background-image: url(../img/prev.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-size: 50%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ;
+}
+section#movierank div.wrap div.reser ul.reserlist .slick-prev::before {
+  display: none;
+}
+section#movierank div.wrap div.reser ul.reserlist .slick-next {
+  background-color: rgba(255,255,255,0.75);
+  width: 50px;
+  height: 50px;
+  right: -15px;
+  z-index: 2;
+  border-radius: 100%;
+  background-image: url(../img/next.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-size: 50%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ; 
+	-moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5)  ;
+}
+section#movierank div.wrap div.reser ul.reserlist .slick-next::before {
+  display: none;
+}
+section#movierank div.wrap div.chart ul li {
+  
+}
+section#movierank div.wrap div.chart ul li img {
+  
+}
+section#movierank div.wrap div.chart ul li h3 {
+  
+}
+section#movierank div.wrap div.chart ul li div.movieatag {
+
+}
+section#movierank div.wrap div.chart ul li div.movieatag a.viewmore {
+  
+}
+section#movierank div.wrap div.chart ul li div.movieatag a.ticketing {
+  
+}
+section#movierank div.wrap div.reser {
+  
+}
+section#movierank div.wrap div.reser ul {
+  
+}
+section#movierank div.wrap div.reser ul li {
+  
+}
+section#movierank div.wrap div.reser ul li img {
+  
+}
+section#movierank div.wrap div.reser ul li h3 {
+  
+}
+section#movierank div.wrap div.reser ul li div.movieatag {
+  
+}
+section#movierank div.wrap div.reser ul li div.movieatag a.viewmore {
+  
+}
+section#movierank div.wrap div.reser ul li div.movieatag a.ticketing {
+  
+}
